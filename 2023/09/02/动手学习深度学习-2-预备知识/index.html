@@ -395,7 +395,7 @@ torch包的导入：import torch
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-03
+                    2023-09-04
                 </div>
                 
 
@@ -404,7 +404,7 @@ torch包的导入：import torch
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -441,7 +441,7 @@ torch包的导入：import torch
 <li><p>加减乘除以及指数：</p>
 </li>
 <li><pre><code class="python">x + y, x - y, x * y, x / y, x ** y
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - `torch.cat`遵循`0上1行`准则。</span><br><span class="line"></span><br><span class="line">  - ![image-20230903213139171](./../pictures/动手学习深度学习-2-预备知识/image-20230903213139171.png)</span><br><span class="line"></span><br><span class="line">- 广播机制</span><br><span class="line"></span><br><span class="line">  - ![image-20230903213221581](./../pictures/动手学习深度学习-2-预备知识/image-20230903213221581.png)</span><br><span class="line">  - ![image-20230903213255527](./../pictures/动手学习深度学习-2-预备知识/image-20230903213255527.png)</span><br><span class="line"></span><br><span class="line">- 索引和切片</span><br><span class="line"></span><br><span class="line">  - ![image-20230903213415056](./../pictures/动手学习深度学习-2-预备知识/image-20230903213415056.png)</span><br><span class="line">  - ![image-20230903213718822](./../pictures/动手学习深度学习-2-预备知识/image-20230903213718822.png)</span><br><span class="line"></span><br><span class="line">- 节省内存</span><br><span class="line"></span><br><span class="line">  - 记住`y += x`比`y = y + x`省内存即可。</span><br><span class="line"></span><br><span class="line">- 转换为其它类型数据</span><br><span class="line"></span><br><span class="line">  - 转`numpy`:`x.numpy()`</span><br><span class="line">  - 转`tensor`：`torch.tensor(x)`</span><br><span class="line">  - 转`python`原始数据：`a.item()`、`float(a)`、`int(a)`、`a.data`等</span><br><span class="line"></span><br><span class="line">## 数据预处理</span><br><span class="line"></span><br><span class="line">数据预处理通常采用`pandas`包来实现</span><br><span class="line"></span><br><span class="line">- 读取数据集</span><br><span class="line"></span><br><span class="line">  - ```python</span><br><span class="line">    import os</span><br><span class="line">    </span><br><span class="line">    os.makedirs(os.path.join(&#x27;..&#x27;, &#x27;data&#x27;), exist_ok=True)</span><br><span class="line">    data_file = os.path.join(&#x27;..&#x27;, &#x27;data&#x27;, &#x27;house_tiny.csv&#x27;)</span><br><span class="line">    with open(data_file, &#x27;w&#x27;) as f:</span><br><span class="line">        f.write(&#x27;NumRooms,Alley,Price\n&#x27;)  # 列名</span><br><span class="line">        f.write(&#x27;NA,Pave,127500\n&#x27;)  # 每行表示一个数据样本</span><br><span class="line">        f.write(&#x27;2,NA,106000\n&#x27;)</span><br><span class="line">        f.write(&#x27;4,NA,178100\n&#x27;)</span><br><span class="line">        f.write(&#x27;NA,NA,140000\n&#x27;)</span><br><span class="line">        </span><br><span class="line">    # 如果没有安装pandas，只需取消对以下行的注释来安装pandas</span><br><span class="line">    # !pip install pandas</span><br><span class="line">    import pandas as pd</span><br><span class="line">    </span><br><span class="line">    data = pd.read_csv(data_file)</span><br><span class="line">    print(data)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - `torch.cat`遵循`0上1行`准则。</span><br><span class="line"></span><br><span class="line">  - ![image-20230903213139171](./../pictures/动手学习深度学习-2-预备知识/image-20230903213139171.png)</span><br><span class="line"></span><br><span class="line">- 广播机制</span><br><span class="line"></span><br><span class="line">  - ![image-20230903213221581](./../pictures/动手学习深度学习-2-预备知识/image-20230903213221581.png)</span><br><span class="line">  - ![image-20230903213255527](./../pictures/动手学习深度学习-2-预备知识/image-20230903213255527.png)</span><br><span class="line"></span><br><span class="line">- 索引和切片</span><br><span class="line"></span><br><span class="line">  - ![image-20230903213415056](./../pictures/动手学习深度学习-2-预备知识/image-20230903213415056.png)</span><br><span class="line">  - ![image-20230903213718822](./../pictures/动手学习深度学习-2-预备知识/image-20230903213718822.png)</span><br><span class="line"></span><br><span class="line">- 节省内存</span><br><span class="line"></span><br><span class="line">  - 记住`y += x`比`y = y + x`省内存即可。</span><br><span class="line"></span><br><span class="line">- 转换为其它类型数据</span><br><span class="line"></span><br><span class="line">  - 转`numpy`:`x.numpy()`</span><br><span class="line">  - 转`tensor`：`torch.tensor(x)`</span><br><span class="line">  - 转`python`原始数据：`a.item()`、`float(a)`、`int(a)`、`a.data`等</span><br><span class="line"></span><br><span class="line">## 2.2 数据预处理</span><br><span class="line"></span><br><span class="line">数据预处理通常采用`pandas`包来实现</span><br><span class="line"></span><br><span class="line">- 读取数据集</span><br><span class="line"></span><br><span class="line">  - ```python</span><br><span class="line">    import os</span><br><span class="line">    </span><br><span class="line">    os.makedirs(os.path.join(&#x27;..&#x27;, &#x27;data&#x27;), exist_ok=True)</span><br><span class="line">    data_file = os.path.join(&#x27;..&#x27;, &#x27;data&#x27;, &#x27;house_tiny.csv&#x27;)</span><br><span class="line">    with open(data_file, &#x27;w&#x27;) as f:</span><br><span class="line">        f.write(&#x27;NumRooms,Alley,Price\n&#x27;)  # 列名</span><br><span class="line">        f.write(&#x27;NA,Pave,127500\n&#x27;)  # 每行表示一个数据样本</span><br><span class="line">        f.write(&#x27;2,NA,106000\n&#x27;)</span><br><span class="line">        f.write(&#x27;4,NA,178100\n&#x27;)</span><br><span class="line">        f.write(&#x27;NA,NA,140000\n&#x27;)</span><br><span class="line">        </span><br><span class="line">    # 如果没有安装pandas，只需取消对以下行的注释来安装pandas</span><br><span class="line">    # !pip install pandas</span><br><span class="line">    import pandas as pd</span><br><span class="line">    </span><br><span class="line">    data = pd.read_csv(data_file)</span><br><span class="line">    print(data)</span><br></pre></td></tr></table></figure>
 </code></pre>
 </li>
 <li><p>输出：</p>
@@ -481,7 +481,7 @@ torch包的导入：import torch
          [4., 0., 1.],
          [3., 0., 1.]], dtype=torch.float64),
  tensor([127500., 106000., 178100., 140000.], dtype=torch.float64))
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 线性代数</span><br><span class="line"></span><br><span class="line">- 标量：这个就不讲了</span><br><span class="line"></span><br><span class="line">- 向量：这个也不见了</span><br><span class="line"></span><br><span class="line">- 长度和维度：前面代码介绍有</span><br><span class="line"></span><br><span class="line">- 矩阵要知道转置怎么写就行：</span><br><span class="line"></span><br><span class="line">  - `A.T`</span><br><span class="line"></span><br><span class="line">- 张量：这个也不见了，`pytorch`固有</span><br><span class="line"></span><br><span class="line">- 张量算法的基本性质：</span><br><span class="line"></span><br><span class="line">  - 克隆：`A = B.clone()`，地址发生变化。</span><br><span class="line">  - ![image-20230903215137438](./../pictures/动手学习深度学习-2-预备知识/image-20230903215137438.png)</span><br><span class="line"></span><br><span class="line">- 降维：</span><br><span class="line"></span><br><span class="line">  - 一般降维就是求和，但是要保持求和维度不变也是可以的。</span><br><span class="line"></span><br><span class="line">  - ```python</span><br><span class="line">    A = B.sum(keepdim=True)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 2.3 线性代数</span><br><span class="line"></span><br><span class="line">- 标量：这个就不讲了</span><br><span class="line"></span><br><span class="line">- 向量：这个也不见了</span><br><span class="line"></span><br><span class="line">- 长度和维度：前面代码介绍有</span><br><span class="line"></span><br><span class="line">- 矩阵要知道转置怎么写就行：</span><br><span class="line"></span><br><span class="line">  - `A.T`</span><br><span class="line"></span><br><span class="line">- 张量：这个也不见了，`pytorch`固有</span><br><span class="line"></span><br><span class="line">- 张量算法的基本性质：</span><br><span class="line"></span><br><span class="line">  - 克隆：`A = B.clone()`，地址发生变化。</span><br><span class="line">  - ![image-20230903215137438](./../pictures/动手学习深度学习-2-预备知识/image-20230903215137438.png)</span><br><span class="line"></span><br><span class="line">- 降维：</span><br><span class="line"></span><br><span class="line">  - 一般降维就是求和，但是要保持求和维度不变也是可以的。</span><br><span class="line"></span><br><span class="line">  - ```python</span><br><span class="line">    A = B.sum(keepdim=True)</span><br></pre></td></tr></table></figure>
 </code></pre>
 </li>
 </ul>
@@ -496,7 +496,66 @@ torch包的导入：import torch
 </ul>
 </li>
 </ul>
-<h2 id="微积分"><a href="#微积分" class="headerlink" title="微积分"></a>微积分</h2>
+<h2 id="2-4-微积分"><a href="#2-4-微积分" class="headerlink" title="2.4 微积分"></a>2.4 微积分</h2><p>模型拟合的任务我们可以分为：</p>
+<p>1.优化：用模型拟合观察数据的过程</p>
+<p>2.泛化：数学原理和实践者的智慧，可以指导我们生成有效性超出用于训练数据集本身的模型，也就是更好的适用其它数据。</p>
+<ul>
+<li>导数和微分<ul>
+<li>导数和微分在pytorch中1没有自动函数，一般根据定义进行求解：</li>
+<li><img src="/./../pictures/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/image-20230904142755972.png" alt="image-20230904142755972"></li>
+<li>我们也可以绘图，这里借助<code>d2l</code>库</li>
+<li><img src="/./../pictures/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/image-20230904145451219.png" alt="image-20230904145451219"></li>
+</ul>
+</li>
+<li>偏导数<ul>
+<li>这里就不介绍了，高数中一个相对容易的概念</li>
+</ul>
+</li>
+<li>梯度<ul>
+<li>连接一个多元函数对其所有的变量的偏导数，得到该函数的梯度向量。</li>
+</ul>
+</li>
+<li>链式法则<ul>
+<li>这里也不介绍了</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-5-自动微分"><a href="#2-5-自动微分" class="headerlink" title="2.5 自动微分"></a>2.5 自动微分</h2><p><code>pytorch</code>提供了自动微分函数，可以帮我们快速解决梯度求解问题</p>
+<ul>
+<li>一个简单的例子<ul>
+<li><img src="/./../pictures/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/image-20230904150253016.png" alt="image-20230904150253016"></li>
+<li>不用<code>torch.dot</code>版本</li>
+<li><img src="/./../pictures/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/image-20230904150351084.png" alt="image-20230904150351084"></li>
+<li><img src="/./../pictures/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/image-20230904150517005.png" alt="image-20230904150517005"></li>
+</ul>
+</li>
+<li>分离计算<ul>
+<li>有时候一个函数有几个变量，而我们只需要求解其中一个变量，将其他变量看成常数，那么可以试试分离变量，下面是一个简单的例子：</li>
+<li><img src="/./../pictures/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/image-20230904150839095.png" alt="image-20230904150839095"></li>
+<li><img src="/./../pictures/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/image-20230904150955043.png" alt="image-20230904150955043"></li>
+</ul>
+</li>
+</ul>
+<h2 id="2-6-Python控制流的梯度计算"><a href="#2-6-Python控制流的梯度计算" class="headerlink" title="2.6 Python控制流的梯度计算"></a>2.6 Python控制流的梯度计算</h2><p>通过条件、循环、函数构成的函数求导依旧可行：</p>
+<p><img src="/./../pictures/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/image-20230904151223275.png" alt="image-20230904151223275"></p>
+<p>求解梯度</p>
+<p><img src="/./../pictures/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/image-20230904151252575.png" alt="image-20230904151252575"></p>
+<p>得到结果：</p>
+<p><img src="/./../pictures/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/image-20230904151413259.png" alt="image-20230904151413259"></p>
+<p>我们现在可以分析上面定义的<code>f</code>函数。 请注意，它在其输入<code>a</code>中是分段线性的。 换言之，对于任何<code>a</code>，存在某个常量标量<code>k</code>，使得<code>f(a)=k*a</code>，其中<code>k</code>的值取决于输入<code>a</code>，因此可以用<code>d/a</code>验证梯度是否正确。</p>
+<h2 id="2-7-概率"><a href="#2-7-概率" class="headerlink" title="2.7 概率"></a>2.7 概率</h2><p>概率这里不讲了，涉及部分概率可以查书本50页。</p>
+<h2 id="2-8-查阅文档"><a href="#2-8-查阅文档" class="headerlink" title="2.8 查阅文档"></a>2.8 查阅文档</h2><p>我们可以通过<code>dir</code>函数查找我们可以调用的函数和类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">dir</span>(torch.distributions))</span><br></pre></td></tr></table></figure>
+
+<p>更具体的说明可以通过<code>help</code>实现查找</p>
+<p><code>help(torch.ones)</code></p>
+<h2 id="2-9答疑"><a href="#2-9答疑" class="headerlink" title="2.9答疑"></a>2.9答疑</h2><ul>
+<li><code>view</code>和<code>reshape</code>的区别<ul>
+<li>从功能上来看，它们的作用是相同的，都是用来重塑 Tensor 的 shape 的。view 只适合对满足连续性条件 (contiguous) 的 Tensor进行操作，而reshape 同时还可以对不满足连续性条件的 Tensor 进行操作，具有更好的鲁棒性。view 能干的 reshape都能干，如果 view 不能干就可以用 reshape 来处理。</li>
+</ul>
+</li>
+</ul>
+
                 
             </div>
             <hr/>
